@@ -1,15 +1,16 @@
 // import { FaGraduationCap } from "react-icons/fa6";
 
+import { FaGraduationCap } from "react-icons/fa6";
+import { GiGraduateCap } from "react-icons/gi";
+
 const HeroSection = () => {
   return (
     <section className="relative bg-[#fdf9f4] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-20">
         <div className="grid lg:grid-cols-2 items-center gap-14">
           {/* Left */}
-
           <div>
-            {/* <FaGraduationCap className="text-5xl text-[#0d2b52] mb-6" /> */}
-
+            <GiGraduateCap className="text-5xl text-[#0d2b52] mb-6" size={50} />
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-[#0d2b52]">
               Build Your
               <br />
@@ -19,15 +20,15 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-gray-500 mt-8 leading-8 max-w-lg">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint.
+              Shape Your Future with SVIM A premier institute committed to
+              quality education,
               <span className="font-semibold text-black">
                 {" "}
-                Velit officia consequat.
+                technology and career growth
               </span>
             </p>
 
-            <button className="mt-10 bg-green-600 hover:bg-green-700 duration-300 text-white px-9 py-4 rounded-full font-semibold">
+            <button className="mt-10 bg-orange-800 hover:bg-slate-800 duration-300 text-white px-9 py-4 rounded-full font-semibold">
               Get Started
             </button>
           </div>
