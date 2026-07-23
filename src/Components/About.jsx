@@ -27,7 +27,7 @@ const About = () => {
           {/* Right Side */}
 
           <div>
-            <span className="text-green-600 font-semibold uppercase tracking-widest">
+            <span className="text-[#B45309] font-semibold uppercase tracking-widest">
               About Our College
             </span>
 

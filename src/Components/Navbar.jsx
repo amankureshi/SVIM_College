@@ -17,7 +17,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className=" text-xl rounded-full w-12 h-12 flex items-center justify-center">
-              <img src={logo} alt="" srcset="" />
+              <img src={logo} alt="" srcset="image_logo" />
             </div>
 
             <div>
