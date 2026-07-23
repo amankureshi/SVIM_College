@@ -2,22 +2,20 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaMedal } from "react-icons/fa";
 import goldMedal from "../assets/gold_medal.png";
+import faculty from "../assets/Courses/female.png";
+import skill from "../assets/Courses/degree.png";
+
 const CourseHero = () => {
   const features = [
     {
-      icon: "👨‍🏫",
+      icon: faculty,
       title: "Expert Faculty",
       desc: "Learn from experienced professors and industry experts.",
     },
     {
-      icon: "🎓",
+      icon: skill,
       title: "Skill Based Learning",
       desc: "Practical knowledge with career focused courses.",
-    },
-    {
-      icon: "🏆",
-      title: "Scholarships",
-      desc: "Rewards for talented and deserving students.",
     },
   ];
 
@@ -33,7 +31,6 @@ const CourseHero = () => {
         className="
       mx-auto
       grid
-      max-w-7xl
       grid-cols-1
       items-center
       gap-12
@@ -71,7 +68,7 @@ const CourseHero = () => {
               repeat: Infinity,
               duration: 3,
             }}
-            className="relative z-10 h-[500px] object-contain"
+            className="relative z-10 h-[100%] object-contain"
           />
 
           {/* Satisfaction Card */}
@@ -165,8 +162,7 @@ const CourseHero = () => {
             "
               >
                 <div
-                  className="
-              flex
+                  className="flex
               h-16
               w-16
               items-center
@@ -176,7 +172,7 @@ const CourseHero = () => {
               text-3xl
               "
                 >
-                  {item.icon}
+                  <img src={item.icon} alt={item.title} className="w-12 h-12" />
                 </div>
 
                 <div>
