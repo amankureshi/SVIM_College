@@ -2,7 +2,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-20 mx-auto w-full max-w-[1150px]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side Image */}
