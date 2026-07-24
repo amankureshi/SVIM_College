@@ -49,11 +49,11 @@ const courses = [
 const Courses = () => {
   return (
     <section className="py-20 bg-[#f8fafc]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="px-6 mx-auto w-full max-w-[1150px]">
         {/* Heading */}
 
         <div className="text-center mb-14">
-          <span className="text-green-600 font-semibold uppercase tracking-widest">
+          <span className="text-[#B45309] font-semibold uppercase tracking-widest">
             Our Courses
           </span>
 
