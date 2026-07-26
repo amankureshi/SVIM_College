@@ -29,7 +29,7 @@ const CourseHero = () => {
     >
       <div
         className="
-      mx-auto
+      mx-auto w-full max-w-[1150px]
       grid
       grid-cols-1
       items-center
@@ -68,7 +68,7 @@ const CourseHero = () => {
               repeat: Infinity,
               duration: 3,
             }}
-            className="relative z-10 h-[100%] object-contain"
+            className="relative z-10  object-contain"
           />
 
           {/* Satisfaction Card */}
@@ -80,7 +80,8 @@ const CourseHero = () => {
             animate={{
               x: 0,
             }}
-            className="absolute bottom-15 left-0 z-20 rounded-xl bg-white/30 backdrop-blur-xl p-5 shadow-xl"
+            // className="absolute bottom-15 left-1 z-20 rounded-xl bg-white/30 backdrop-blur-xl p-5 shadow-xl"
+            className="absolute bottom-15 -left-10 z-20 rounded-xl bg-white/30 backdrop-blur-xl p-5 shadow-xl"
           >
             <div className="text-3xl flex justify-center">
               <img src={goldMedal} alt="" srcset="" width={40} />
