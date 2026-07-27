@@ -5,6 +5,8 @@ import {
   XMarkIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
+import { FaSortDown } from "react-icons/fa";
+import { IoChevronDown } from "react-icons/io5";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,7 +50,7 @@ const Navbar = () => {
                 className="flex items-center gap-1 text-gray-700 hover:text-orange-800 font-medium"
               >
                 Courses
-                <ChevronDownIcon className="w-4 h-4" />
+                <IoChevronDown className="mt-1" />
               </button>
 
               {courseOpen && (
