@@ -15,11 +15,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1">
             <div className=" text-xl rounded-full w-12 h-12 flex items-center justify-center">
-              <img src={logo} alt="" srcset="image_logo" />
+              <img src={logo} alt="" />
             </div>
-
             <div>
               <h1 className="text-xl font-bold text-gray-800">SVIM College</h1>
               <p className="text-xs text-gray-500">Excellence in Education</p>
