@@ -29,14 +29,14 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             <a
               href="#home"
-              className="text-gray-700 hover:text-blue-600 font-medium"
+              className="text-gray-700 hover:text-orange-800 font-medium"
             >
               Home
             </a>
 
             <a
               href="#about"
-              className="text-gray-700 hover:text-blue-600 font-medium"
+              className="text-gray-700 hover:text-orange-800 font-medium"
             >
               About
             </a>
@@ -45,7 +45,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setCourseOpen(!courseOpen)}
-                className="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium"
+                className="flex items-center gap-1 text-gray-700 hover:text-orange-800 font-medium"
               >
                 Courses
                 <ChevronDownIcon className="w-4 h-4" />
@@ -70,14 +70,14 @@ const Navbar = () => {
 
             <a
               href="#admissions"
-              className="text-gray-700 hover:text-blue-600 font-medium"
+              className="text-gray-700 hover:text-orange-800 font-medium"
             >
               Admissions
             </a>
 
             <a
               href="#contact"
-              className="text-gray-700 hover:text-blue-600 font-medium"
+              className="text-gray-700 hover:text-orange-800 font-medium"
             >
               Contact
             </a>
@@ -155,7 +155,7 @@ const Navbar = () => {
               Contact
             </a>
 
-            <button className="w-full bg-blue-600 text-white py-2 rounded-full">
+            <button className="w-full bg-orange-800 text-white py-2 rounded-full">
               Login
             </button>
           </div>
