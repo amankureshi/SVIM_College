@@ -49,7 +49,7 @@ const courses = [
 const Courses = () => {
   return (
     <section className="py-20 bg-[#f8fafc]">
-      <div className="px-6 mx-auto w-full max-w-[1150px]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
 
         <div className="text-center mb-14">
