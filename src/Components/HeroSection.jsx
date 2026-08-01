@@ -90,34 +90,32 @@ const HeroSection = () => {
                 transition={{ delay: 0.6 }}
                 className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
               >
-                <button className="group relative flex w-full items-center justify-center overflow-hidden rounded-full bg-[#A42F2B] px-8 py-4 font-semibold text-white shadow-xl transition-all duration-700 hover:bg-white active:scale-95 sm:w-auto">
-                  {/* Left Arrow */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="absolute left-4 z-20 h-6 w-6 -translate-x-12 text-white opacity-0 transition-all duration-700 group-hover:translate-x-0 group-hover:opacity-100"
-                    fill="currentColor"
-                  >
-                    <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
-                  </svg>
+                <button
+                  className="group relative flex w-full items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl transition-all duration-500 hover:scale-105 active:scale-95 sm:w-auto"
+                >
+                  {/* Animated Border */}
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#A42F2B] via-orange-400 to-[#12396d] opacity-100 blur-sm transition-all duration-500 group-hover:blur-md" />
 
-                  {/* Text */}
-                  <span className="relative z-10 transition-all duration-700 group-hover:translate-x-3">
-                    Apply Now
+                  {/* Button Body */}
+                  <span className="relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-[#A42F2B] px-8 py-4 font-semibold text-white sm:w-auto">
+                    {/* Shine Effect */}
+                    <span className="absolute -left-20 top-0 h-full w-16 rotate-12 bg-white/30 transition-all duration-700 group-hover:left-[120%]" />
+
+                    {/* Text */}
+                    <span className="relative z-10">Apply Now</span>
+
+                    {/* Arrow Circle */}
+                    <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#A42F2B] transition-all duration-500 group-hover:bg-[#12396d] group-hover:text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="h-5 w-5 transition-transform duration-500 group-hover:translate-x-1"
+                      >
+                        <path d="M13.172 12L8.222 7.05L9.636 5.636L16 12L9.636 18.364L8.222 16.95L13.172 12Z" />
+                      </svg>
+                    </span>
                   </span>
-
-                  {/* Circle */}
-                  <span className="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-950 opacity-0 transition-all duration-700 group-hover:h-[220px] group-hover:w-[220px] group-hover:opacity-100" />
-
-                  {/* Right Arrow */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="absolute bottom-3.5 right-2 h-6 w-6 transition-all duration-700 group-hover:-right-10"
-                    fill="currentColor"
-                  >
-                    <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
-                  </svg>
                 </button>
 
                 <button className="flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto">
@@ -188,7 +186,7 @@ const HeroSection = () => {
               >
                 <div className="h-[360px] w-[280px] overflow-hidden rounded-[30px] border-4 border-white shadow-[0_25px_60px_rgba(0,0,0,.25)] sm:h-[430px] sm:w-[340px] sm:border-8 md:h-[500px] md:w-[400px] lg:h-[520px] lg:w-[420px] lg:rounded-[40px]">
                   <img
-                    src="https://amankureshi.vercel.app/assets/about_Image-DkQKwxer.jpg"
+                    src="https://static.toiimg.com/thumb/msid-123169563,width-1280,height-720,resizemode-4/123169563.jpg"
                     alt="Student"
                     className="h-full w-full object-cover"
                   />
