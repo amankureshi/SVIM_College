@@ -1,169 +1,338 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 import {
   Bars3Icon,
   XMarkIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
-import { FaSortDown } from "react-icons/fa";
-import { IoChevronDown } from "react-icons/io5";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [courseOpen, setCourseOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const menuItems = [
+    {
+      name: "Programs",
+      dropdown: true,
+    },
+    {
+      name: "Admissions",
+    },
+    {
+      name: "Faculty",
+    },
+    {
+      name: "Placements",
+    },
+    {
+      name: "Campus",
+    },
+    {
+      name: "Contact",
+    },
+  ];
 
   return (
-    <nav className="bg-white shadow-md fixed w-full top-0 z-50">
+    <motion.nav
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled
+        ? "bg-white/90 shadow-lg backdrop-blur-xl"
+        : "bg-white shadow-md"
+        }`}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-1">
-            <div className="text-xl rounded-full w-18 h-20 flex items-center justify-center">
-              <img src={logo} alt="" />
-            </div>
+
+          <div className="flex items-center gap-3">
+            <motion.img
+              src={logo}
+              alt="SVIM Logo"
+              className="h-16 w-16 object-contain"
+              whileHover={{
+                scale: 1.05,
+                rotate: 5,
+              }}
+              transition={{
+                type: "spring",
+              }}
+            />
+
             <div>
-              <h1 className="text-xl font-bold text-gray-800">SVIM College</h1>
-              <p className="text-xs text-gray-500">Excellence in Education</p>
+              <h1 className="text-xl font-bold text-[#12396d]">
+                SVIM College
+              </h1>
+
+              <p className="text-xs text-gray-500">
+                Excellence in Education
+              </p>
             </div>
           </div>
+
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+
+          <div className="hidden items-center gap-8 lg:flex">
+
             <a
               href="#home"
-              className="text-gray-700 hover:text-orange-800 font-medium"
+              className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]"
             >
               Home
+
+              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full"></span>
             </a>
+
 
             <a
               href="#about"
-              className="text-gray-700 hover:text-orange-800 font-medium"
+              className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]"
             >
               About
+
+              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full"></span>
             </a>
 
-            {/* Courses Dropdown */}
+
+            {/* Programs Dropdown */}
+
             <div className="relative">
+
               <button
                 onClick={() => setCourseOpen(!courseOpen)}
-                className="flex items-center gap-1 text-gray-700 hover:text-orange-800 font-medium"
+                className="flex items-center gap-1 font-medium text-gray-700 transition hover:text-[#A42F2B]"
               >
-                Courses
-                <IoChevronDown className="mt-1" />
+                Programs
+
+                <ChevronDownIcon
+                  className={`h-4 w-4 transition ${courseOpen ? "rotate-180" : ""
+                    }`}
+                />
               </button>
 
-              {courseOpen && (
-                <div className="absolute top-8 left-0 bg-white shadow-lg rounded-lg w-48 py-2">
-                  <a href="#bca" className="block px-4 py-2 hover:bg-blue-50">
-                    BCA
-                  </a>
 
-                  <a href="#bba" className="block px-4 py-2 hover:bg-blue-50">
-                    BBA
-                  </a>
+              <AnimatePresence>
 
-                  <a href="#mba" className="block px-4 py-2 hover:bg-blue-50">
-                    MBA
-                  </a>
-                </div>
-              )}
+                {courseOpen && (
+
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 15,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      y: 15,
+                    }}
+                    transition={{
+                      duration: 0.25,
+                    }}
+                    className="absolute left-0 top-10 w-52 rounded-xl bg-white p-3 shadow-xl"
+                  >
+
+                    <a
+                      href="#mca"
+                      className="block rounded-lg px-4 py-3 text-gray-700 transition hover:bg-blue-50 hover:text-[#12396d]"
+                    >
+                      MCA
+                    </a>
+
+
+                    <a
+                      href="#bca"
+                      className="block rounded-lg px-4 py-3 text-gray-700 transition hover:bg-blue-50 hover:text-[#12396d]"
+                    >
+                      BCA
+                    </a>
+
+
+                    <a
+                      href="#mba"
+                      className="block rounded-lg px-4 py-3 text-gray-700 transition hover:bg-blue-50 hover:text-[#12396d]"
+                    >
+                      MBA
+                    </a>
+
+                  </motion.div>
+
+                )}
+
+              </AnimatePresence>
+
             </div>
 
-            <a
-              href="#admissions"
-              className="text-gray-700 hover:text-orange-800 font-medium"
-            >
-              Admissions
-            </a>
 
-            <a
-              href="#contact"
-              className="text-gray-700 hover:text-orange-800 font-medium"
-            >
-              Contact
-            </a>
+            {menuItems
+              .filter((item) => !item.dropdown)
+              .map((item, index) => (
 
-            <button className="bg-orange-800 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">
-              Login
-            </button>
+                <a
+                  key={index}
+                  href={`#${item.name.toLowerCase()}`}
+                  className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]"
+                >
+
+                  {item.name}
+
+                  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full"></span>
+
+                </a>
+
+              ))}
+
+
+
+            {/* Apply Button */}
+
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.95,
+              }}
+              className="group relative overflow-hidden rounded-full bg-[#A42F2B] px-7 py-3 font-semibold text-white shadow-lg"
+            >
+
+              <span className="relative z-10">
+                Apply Now
+              </span>
+
+
+              <span
+                className="
+                absolute
+                inset-0
+                translate-y-full
+                bg-[#12396d]
+                transition-all
+                duration-500
+                group-hover:translate-y-0
+                "
+              />
+
+            </motion.button>
+
+
           </div>
+
+
 
           {/* Mobile Button */}
+
           <button
-            className="md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden"
           >
+
             {mobileOpen ? (
-              <XMarkIcon className="w-7 h-7" />
+              <XMarkIcon className="h-8 w-8 text-[#12396d]" />
             ) : (
-              <Bars3Icon className="w-7 h-7" />
+              <Bars3Icon className="h-8 w-8 text-[#12396d]" />
             )}
+
           </button>
+
+
         </div>
 
-        {/* Mobile Menu */}
-        {mobileOpen && (
-          <div className="md:hidden pb-5 space-y-3">
-            <a
-              href="#home"
-              className="block px-3 py-2 rounded hover:bg-blue-50"
-            >
-              Home
-            </a>
 
-            <a
-              href="#about"
-              className="block px-3 py-2 rounded hover:bg-blue-50"
-            >
-              About
-            </a>
-
-            <button
-              onClick={() => setCourseOpen(!courseOpen)}
-              className="flex items-center justify-between w-full px-3 py-2 hover:bg-blue-50 rounded"
-            >
-              Courses
-              <ChevronDownIcon className="w-4 h-4" />
-            </button>
-
-            {courseOpen && (
-              <div className="ml-5 space-y-2">
-                <a href="#bca" className="block text-gray-600">
-                  BCA
-                </a>
-
-                <a href="#bba" className="block text-gray-600">
-                  BBA
-                </a>
-
-                <a href="#mba" className="block text-gray-600">
-                  MBA
-                </a>
-              </div>
-            )}
-
-            <a
-              href="#admissions"
-              className="block px-3 py-2 rounded hover:bg-blue-50"
-            >
-              Admissions
-            </a>
-
-            <a
-              href="#contact"
-              className="block px-3 py-2 rounded hover:bg-blue-50"
-            >
-              Contact
-            </a>
-
-            <button className="w-full bg-orange-800 text-white py-2 rounded-full">
-              Login
-            </button>
-          </div>
-        )}
       </div>
-    </nav>
+
+
+
+      {/* Mobile Menu */}
+
+      <AnimatePresence>
+
+        {mobileOpen && (
+
+          <motion.div
+            initial={{
+              x: "100%",
+            }}
+            animate={{
+              x: 0,
+            }}
+            exit={{
+              x: "100%",
+            }}
+            transition={{
+              duration: 0.3,
+            }}
+            className="fixed right-0 top-20 h-screen w-80 bg-white p-6 shadow-xl lg:hidden"
+          >
+
+
+            <div className="space-y-4">
+
+
+              {[
+                "Home",
+                "About",
+                "Programs",
+                "Admissions",
+                "Faculty",
+                "Placements",
+                "Campus",
+                "Contact",
+              ].map((item, index) => (
+
+                <a
+                  key={index}
+                  href={`#${item.toLowerCase()}`}
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-700 transition hover:bg-blue-50 hover:text-[#12396d]"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item}
+                </a>
+
+              ))}
+
+
+              <button
+                className="
+                w-full
+                rounded-full
+                bg-[#A42F2B]
+                py-3
+                font-semibold
+                text-white
+                "
+              >
+                Apply Now
+              </button>
+
+
+            </div>
+
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
+
+
+    </motion.nav>
   );
 };
 
