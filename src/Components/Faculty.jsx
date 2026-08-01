@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaArrowAltCircleLeft,
-  FaArrowAltCircleRight,
-  FaArrowLeft,
-} from "react-icons/fa";
+import { FaGraduationCap, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 const faculties = [
   {
@@ -18,130 +20,231 @@ const faculties = [
     id: 2,
     name: "Dr. Bhumika Arora",
     designation: "Assistant Professor",
-    expertise: "Data Warehousing and Data Mining, Full Stack Development",
+    expertise: "Data Warehousing, Data Mining & Full Stack Development",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
     id: 3,
     name: "Prof. Vishwa Chaudhari",
     designation: "Associate Professor",
-    expertise: "Advanced Object Oriented Technology, Advanced Networking",
+    expertise: "Networking & Object Oriented Technology",
     image: "https://randomuser.me/api/portraits/men/55.jpg",
   },
   {
     id: 4,
     name: "Prof. Palak Suthar",
     designation: "Assistant Professor",
-    expertise: "Cloud Computing, Python, Web Technologies",
+    expertise: "Cloud Computing, Python & Web Technologies",
     image: "https://randomuser.me/api/portraits/women/65.jpg",
   },
   {
     id: 5,
-    name: "Pending....",
+    name: "Prof. Rahul Patel",
     designation: "Assistant Professor",
     expertise: "Cyber Security",
     image: "https://randomuser.me/api/portraits/men/75.jpg",
   },
 ];
 
-export default function FacultyCarousel() {
-  const [active, setActive] = useState(0);
-
-  const next = () => {
-    setActive((prev) => (prev === faculties.length - 1 ? 0 : prev + 1));
-  };
-
-  const previous = () => {
-    setActive((prev) => (prev === 0 ? faculties.length - 1 : prev - 1));
-  };
-
-  const visibleCards = [
-    faculties[active],
-    faculties[(active + 1) % faculties.length],
-    faculties[(active + 2) % faculties.length],
-  ];
-
+const FacultySlider = () => {
   return (
-    // <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 py-20">
-    <section className="bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 py-20">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="mb-12 text-center text-white">
-          <h1 className="text-4xl font-bold">Meet Our MCA Faculty</h1>
+    <section className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
 
-          <p className="mt-3 text-blue-200">
-            Experienced mentors shaping future IT professionals
+        <div className="mb-12 text-center">
+          <span className="font-semibold uppercase tracking-[4px] text-[#A42F2B]">
+            Our Faculty
+          </span>
+
+          <h2 className="mt-3 text-4xl font-bold text-[#12396d]">
+            Meet Our Expert Faculty
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl text-gray-600">
+            Experienced professors guiding students with practical knowledge and
+            industry focused learning.
           </p>
         </div>
 
-        <div className="flex items-center gap-5">
-          <button
-            onClick={previous}
-            className="rounded-full bg-white/20 px-5 py-3 text-2xl text-white backdrop-blur hover:bg-white/30"
-          >
-            <FaArrowAltCircleLeft />
-          </button>
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          navigation
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          spaceBetween={25}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
 
-          <motion.div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-3">
-            {visibleCards.map((faculty, index) => (
+            640: {
+              slidesPerView: 2,
+            },
+
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {faculties.map((faculty) => (
+            <SwiperSlide key={faculty.id}>
               <motion.div
-                key={faculty.id}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
                 whileHover={{
-                  y: -12,
-                  scale: 1.03,
+                  y: -10,
                 }}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                }}
-                className={`
-                  rounded-3xl border border-white/20
-                  bg-white/10 p-6 text-center
-                  text-white backdrop-blur-xl
-                  shadow-2xl
-                  ${index === 1 ? "md:scale-110" : ""}
-                `}
+                className="
+                  overflow-hidden
+                  rounded-3xl
+                  bg-white
+                  shadow-lg
+                  "
               >
-                <div className="relative mx-auto w-fit">
+                {/* Image */}
+
+                <div
+                  className="
+                    relative
+                     overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 
+                    p-8
+                    text-center
+                  "
+                >
+                  <div
+                    className="
+                    absolute
+                    right-5
+                    top-5
+                    flex
+                    h-10
+                    w-10
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-white/20
+                    text-white
+                    "
+                  >
+                    <FaGraduationCap />
+                  </div>
+
                   <img
                     src={faculty.image}
-                    className="h-32 w-32 rounded-full border-4 border-blue-950 object-cover"
+                    alt={faculty.name}
+                    className="
+                      mx-auto
+                      h-32
+                      w-32
+                      rounded-full
+                      border-4
+                      border-white
+                      object-cover
+                      "
                   />
-
-                  <span className="absolute bottom-2 right-2 h-5 w-5 rounded-full border-2 border-white bg-green-500"></span>
                 </div>
 
-                <h2 className="mt-5 text-xl font-bold">{faculty.name}</h2>
+                {/* Content */}
 
-                <p className="mt-2 text-blue-200">{faculty.designation}</p>
+                <div className="p-6 text-center">
+                  <h3
+                    className="
+                    text-xl
+                    font-bold
+                    text-[#12396d]
+                    "
+                  >
+                    {faculty.name}
+                  </h3>
 
-                <div className="mt-4 rounded-full bg-white/10 px-4 py-2 text-sm">
-                  {faculty.expertise}
+                  <p
+                    className="
+                    mt-2
+                    font-semibold
+                    text-[#A42F2B]
+                    "
+                  >
+                    {faculty.designation}
+                  </p>
+
+                  <p
+                    className="
+                    mt-4
+                    text-sm
+                    leading-6
+                    text-gray-600
+                    "
+                  >
+                    {faculty.expertise}
+                  </p>
+
+                  <div
+                    className="
+                    mt-5
+                    flex
+                    justify-center
+                    gap-3
+                    "
+                  >
+                    <button
+                      className="
+                      flex
+                      h-9
+                      w-9
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-blue-50
+                      text-[#12396d]
+                      hover:bg-[#12396d]
+                      hover:text-white
+                      "
+                    >
+                      <FaLinkedin />
+                    </button>
+
+                    <button
+                      className="
+                      flex
+                      h-9
+                      w-9
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-red-50
+                      text-[#A42F2B]
+                      hover:bg-[#A42F2B]
+                      hover:text-white
+                      "
+                    >
+                      <FaEnvelope />
+                    </button>
+                  </div>
+
+                  <button
+                    className="
+                    mt-6
+                    rounded-full
+                    bg-[#12396d]
+                    px-6
+                    py-3
+                    font-semibold
+                    text-white
+                    transition
+                    hover:bg-[#A42F2B]
+                    "
+                  >
+                    View Profile
+                  </button>
                 </div>
-
-                <button className="mt-6 rounded-full bg-[#A42F2B] px-6 py-2 font-semibold hover:bg-blue-600">
-                  View Profile
-                </button>
               </motion.div>
-            ))}
-          </motion.div>
-
-          <button
-            onClick={next}
-            className="rounded-full bg-white/20 px-5 py-3 text-2xl text-white backdrop-blur hover:bg-white/30"
-          >
-            <FaArrowAltCircleRight />
-          </button>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
-}
+};
+
+export default FacultySlider;
