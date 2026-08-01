@@ -162,9 +162,20 @@ const Navbar = () => {
             ))}
 
 
-            <button className="rounded-full bg-[#A42F2B] px-7 py-3 font-semibold text-white shadow-lg">
-              Apply Now
-            </button>
+            <motion.button
+              // whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative overflow-hidden rounded-full bg-[#A42F2B] px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+
+              <span className="relative z-10 flex items-center gap-2">
+                Apply Now
+                {/* <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span> */}
+              </span>
+            </motion.button>
 
           </div>
 
