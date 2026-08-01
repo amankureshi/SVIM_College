@@ -9,7 +9,7 @@ import {
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-slate-50">
+    <section className="relative overflow-hidden bg-slate-50 pt-10 lg:pt-0">
       <div className="mx-auto max-w-7xl">
         {/* Background Blur */}
 
