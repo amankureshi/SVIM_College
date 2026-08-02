@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { FaCalendarAlt } from "react-icons/fa";
-import events from "../assets/Events/Event_Expert.jpeg";
-import coding from "../assets/Events/Coding.jpeg";
-import yuvaGita from "../assets/Events/Yuva_Gita.jpeg";
-import fresherParty from "../assets/Events/Fresher_Party.jpg";
-import sports from "../assets/Events/sports.jpeg";
-import culturalWeek from "../assets/Events/Cultural_week.jpeg";
+import events from "../assets/Events_Image/Event_Expert.jpeg";
+import coding from "../assets/Events_Image/Coding.jpeg";
+import yuvaGita from "../assets/Events_Image/Yuva_Gita.jpeg";
+import fresherParty from "../assets/Events_Image/Fresher_Party.jpg";
+import sports from "../assets/Events_Image/sports.jpeg";
+import culturalWeek from "../assets/Events_Image/Cultural_week.jpeg";
 
 const gallery = [
   {
