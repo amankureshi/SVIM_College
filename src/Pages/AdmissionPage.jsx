@@ -1,13 +1,13 @@
 import Navbar from "../Components/Common/Navbar";
 import Footer from "../Components/Common/Footer";
 import { motion } from "framer-motion";
+import Container from "./Container";
 import {
     FaUserGraduate,
     FaFileAlt,
     FaCheckCircle,
     FaPaperPlane,
 } from "react-icons/fa";
-import Container from "./Container";
 
 const AdmissionPage = () => {
     const steps = [
