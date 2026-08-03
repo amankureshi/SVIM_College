@@ -9,7 +9,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="h-[500px] w-full overflow-hidden rounded-3xl">
               <img
-                src="http://nicsm.ac.in/assets/img/about_institute.jpeg"
+                src="https://i.postimg.cc/sx7Gr4kB/about-institute.jpg"
                 alt="About College"
                 className="h-full w-full object-cover"
               />
