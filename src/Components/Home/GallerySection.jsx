@@ -131,7 +131,7 @@ const GallerySection = () => {
                   <span>{event.date}</span>
                 </div>
 
-                <button className="mt-5 w-fit bg-white text-[#163A70] px-5 py-2 rounded-full font-semibold hover:bg-[#B45309] hover:text-white duration-300">
+                <button className="mt-5 w-fit bg-white text-[#163A70] px-5 py-2 rounded-full font-semibold hover:bg-orange-800 hover:text-white duration-300">
                   View Details
                 </button>
               </div>
