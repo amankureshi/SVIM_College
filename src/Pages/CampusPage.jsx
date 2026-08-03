@@ -1,6 +1,5 @@
 import Navbar from "../Components/Common/Navbar";
 import Footer from "../Components/Common/Footer";
-// import PageHero from "../Components/Common/PageHero";
 import CTASection from "../Components/Home/CTASection";
 
 import { motion } from "framer-motion";
@@ -12,19 +11,20 @@ import {
     FaUtensils,
     FaBasketballBall,
 } from "react-icons/fa";
+import Container from "./Container";
 
 const facilities = [
     {
         icon: <FaBook />,
         title: "Modern Library",
         desc: "A well-equipped library with thousands of books, journals and digital resources.",
-        image: "/images/campus/library.jpg",
+        image: "http://nicsm.ac.in/images/image5.jpeg",
     },
     {
         icon: <FaLaptopCode />,
         title: "Computer Labs",
         desc: "High-performance computer labs with latest software and internet facilities.",
-        image: "/images/campus/lab.jpg",
+        image: "http://nicsm.ac.in/images/image10.jpeg",
     },
     {
         icon: <FaWifi />,
@@ -66,25 +66,27 @@ const CampusPage = () => {
         <>
             <Navbar />
 
-
             {/* Intro */}
-            <section className="py-20 bg-[#142d5c]">
-                <div className=" text-center">
+            <section className="bg-[#142d5c] py-16 md:py-20">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-4xl">
 
-                    <span className="uppercase tracking-[4px] text-[#A42F2B] font-semibold">
-                        Welcome To Our Campus
-                    </span>
+                        <p className="text-[#d6b36a] uppercase tracking-widest text-sm md:text-base font-semibold mb-4 pt-10">
+                            Welcome To Our Campus
+                        </p>
 
-                    <h2 className="text-5xl font-bold text-[#12396d] mt-4">
-                        Learn, Explore & Grow
-                    </h2>
+                        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl leading-tight mb-5 font-bold">
+                            Learn, Explore & Grow
+                        </h1>
 
-                    <p className="mt-6 text-gray-600 max-w-3xl mx-auto leading-8">
-                        Our campus offers a modern learning environment with advanced
-                        laboratories, library, sports facilities, Wi-Fi connectivity and
-                        student-friendly infrastructure to support academic excellence.
-                    </p>
+                        <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed">
+                            Our campus offers a modern learning environment with advanced
+                            laboratories, a well-equipped library, sports facilities, Wi-Fi
+                            connectivity, and student-friendly infrastructure designed to
+                            support academic excellence and overall student development.
+                        </p>
 
+                    </div>
                 </div>
             </section>
 
@@ -92,17 +94,24 @@ const CampusPage = () => {
 
             <section className="py-20 bg-slate-50">
 
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <Container>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                         {facilities.map((item, index) => (
                             <motion.div
                                 key={index}
+                                initial={{ opacity: 0, y: 60 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={{
+                                    duration: 0.6,
+                                    delay: index * 0.15,
+                                    ease: "easeOut",
+                                }}
                                 whileHover={{ y: -10 }}
                                 className="bg-white rounded-3xl overflow-hidden shadow-lg"
                             >
-
                                 <img
                                     src={item.image}
                                     alt={item.title}
@@ -110,7 +119,6 @@ const CampusPage = () => {
                                 />
 
                                 <div className="p-6">
-
                                     <div className="w-14 h-14 rounded-full bg-[#12396d] text-white flex items-center justify-center text-xl">
                                         {item.icon}
                                     </div>
@@ -122,15 +130,13 @@ const CampusPage = () => {
                                     <p className="text-gray-600 mt-4 leading-7">
                                         {item.desc}
                                     </p>
-
                                 </div>
-
                             </motion.div>
                         ))}
 
                     </div>
 
-                </div>
+                </Container>
 
             </section>
 
@@ -142,13 +148,21 @@ const CampusPage = () => {
 
                     <div className="text-center mb-14">
 
-                        <span className="uppercase tracking-[4px] text-[#A42F2B] font-semibold">
-                            Campus Gallery
-                        </span>
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7 }}
+                            className="text-center mb-14"
+                        >
+                            <span className="uppercase tracking-[4px] text-[#A42F2B] font-semibold">
+                                Campus Gallery
+                            </span>
 
-                        <h2 className="text-5xl font-bold text-[#12396d] mt-4">
-                            Explore Our Campus
-                        </h2>
+                            <h2 className="text-5xl font-bold text-[#12396d] mt-4">
+                                Explore Our Campus
+                            </h2>
+                        </motion.div>
 
                     </div>
 
@@ -157,16 +171,22 @@ const CampusPage = () => {
                         {gallery.map((img, index) => (
                             <motion.div
                                 key={index}
+                                initial={{ opacity: 0, y: 60 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={{
+                                    duration: 0.6,
+                                    delay: index * 0.15,
+                                    ease: "easeOut",
+                                }}
                                 whileHover={{ scale: 1.05 }}
                                 className="overflow-hidden rounded-3xl shadow-lg"
                             >
-
                                 <img
                                     src={img}
                                     alt="Campus"
                                     className="w-full h-72 object-cover transition duration-500 hover:scale-110"
                                 />
-
                             </motion.div>
                         ))}
 
