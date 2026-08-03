@@ -7,6 +7,7 @@ import {
     FaCheckCircle,
     FaPaperPlane,
 } from "react-icons/fa";
+import Container from "./Container";
 
 const AdmissionPage = () => {
     const steps = [
@@ -38,7 +39,7 @@ const AdmissionPage = () => {
 
             {/* Admission Banner */}
             <section className="bg-[#142d5c] py-16 md:py-20">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl">
 
                         <p className="text-[#d6b36a] uppercase tracking-widest text-sm md:text-base font-semibold mb-4 pt-10">
@@ -58,9 +59,8 @@ const AdmissionPage = () => {
                 </div>
             </section>
 
-            <section className="py-20 bg-white">
+            <div className="py-20 bg-white ">
                 <div className="max-w-7xl mx-auto px-6 text-center">
-
                     <span className="uppercase tracking-[4px] text-[#A42F2B] font-semibold">
                         Admission Open 2026-27
                     </span>
@@ -76,13 +76,13 @@ const AdmissionPage = () => {
                     </p>
 
                 </div>
-            </section>
+            </div>
 
             {/* Process */}
 
             <section className="py-20 bg-slate-50">
 
-                <div className="max-w-7xl mx-auto px-6">
+                <Container className="">
 
                     <h2 className="text-center text-4xl font-bold text-[#12396d] mb-16">
                         Admission Process
@@ -114,14 +114,14 @@ const AdmissionPage = () => {
 
                     </div>
 
-                </div>
+                </Container>
 
             </section>
 
             {/* Eligibility + Documents */}
 
             <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+                <Container className="grid lg:grid-cols-2 gap-12">
                     <div className="bg-slate-50 rounded-3xl p-10 shadow-lg">
 
                         <h3 className="text-3xl font-bold text-[#12396d] mb-6">
@@ -164,7 +164,7 @@ const AdmissionPage = () => {
 
                     </div>
 
-                </div>
+                </Container>
 
             </section>
 
