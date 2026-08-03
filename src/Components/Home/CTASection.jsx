@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const CTASection = () => {
   return (
     <section
-      className="relative overflow-hidden py-24"
+      className="relative overflow-hidden py-24 mb-25"
       style={{
         background:
           "linear-gradient(135deg,#12396d 0%,#12396d 45%,#A42F2B 100%)",
