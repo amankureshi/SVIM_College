@@ -46,7 +46,7 @@ const courses = [
   },
 ];
 
-const Courses = () => {
+const CoursesSection = () => {
   return (
     <section className="py-20 bg-[#f8fafc]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -96,4 +96,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default CoursesSection;

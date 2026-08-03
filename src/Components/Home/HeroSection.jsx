@@ -186,7 +186,7 @@ const HeroSection = () => {
               >
                 <div className="h-[360px] w-[280px] overflow-hidden rounded-[30px] border-4 border-white shadow-[0_25px_60px_rgba(0,0,0,.25)] sm:h-[430px] sm:w-[340px] sm:border-8 md:h-[500px] md:w-[400px] lg:h-[520px] lg:w-[420px] lg:rounded-[40px]">
                   <img
-                    src="https://static.toiimg.com/thumb/msid-123169563,width-1280,height-720,resizemode-4/123169563.jpg"
+                    src="https://college-npccsm.vercel.app/images/fCollege.jpg"
                     alt="Student"
                     className="h-full w-full object-cover"
                   />

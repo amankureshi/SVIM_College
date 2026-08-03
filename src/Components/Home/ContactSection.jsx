@@ -29,7 +29,7 @@ const info = [
   },
 ];
 
-export default function Contact() {
+export default function ContactSection() {
   return (
     <section className="py-24 bg-slate-50 ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { FaCalendarAlt } from "react-icons/fa";
-import events from "../assets/Events_Image/Event_Expert.jpeg";
-import coding from "../assets/Events_Image/Coding.jpeg";
-import yuvaGita from "../assets/Events_Image/Yuva_Gita.jpeg";
-import fresherParty from "../assets/Events_Image/Fresher_Party.jpg";
-import sports from "../assets/Events_Image/sports.jpeg";
-import culturalWeek from "../assets/Events_Image/Cultural_week.jpeg";
+import events from "../../assets/Events_Image/Event_Expert.jpeg";
+import coding from "../../assets/Events_Image/Coding.jpeg";
+import yuvaGita from "../../assets/Events_Image/Yuva_Gita.jpeg";
+import fresherParty from "../../assets/Events_Image/Fresher_Party.jpg";
+import sports from "../../assets/Events_Image/sports.jpeg";
+import culturalWeek from "../../assets/Events_Image/Cultural_week.jpeg";
 
 const gallery = [
   {
@@ -69,7 +69,7 @@ const item = {
   },
 };
 
-const Gallery = () => {
+const GallerySection = () => {
   return (
     <section className="py-20 bg-[#F8FAFC]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -143,4 +143,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GallerySection;

@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-import goldMedal from "../assets/gold_medal.png";
-import faculty from "../assets/Courses/female.png";
-import skill from "../assets/Courses/degree.png";
+import goldMedal from "../../assets/Courses/gold_medal.png";
+import faculty from "../../assets/Courses/female.png";
+import skill from "../../assets/Courses/degree.png";
 
 const CourseHero = () => {
   const features = [

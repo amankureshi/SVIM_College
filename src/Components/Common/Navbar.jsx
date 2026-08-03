@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import {
   Bars3Icon,
   XMarkIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,13 +38,13 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    "Home",
-    "About",
-    "Admissions",
-    "Faculty",
-    "Placements",
-    "Campus",
-    "Contact",
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Admissions", path: "/admissions" },
+    { name: "Faculty", path: "/faculty" },
+    { name: "Placements", path: "/placements" },
+    { name: "Campus", path: "/campus" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -58,7 +59,6 @@ const Navbar = () => {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-
           {/* Logo */}
           <div className="flex items-center gap-3 min-w-0">
             <motion.img
@@ -85,27 +85,21 @@ const Navbar = () => {
             </div>
           </div>
 
-
           {/* Desktop Menu */}
           <div className="hidden items-center gap-8 lg:flex">
-
-            <a href="#home"
-              className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]">
-              Home
-              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full" />
-            </a>
-
-
-            <a href="#about"
-              className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]">
-              About
-              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full" />
-            </a>
-
+            {menuItems.slice(0, 2).map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]"
+              >
+                {item.name}
+                <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
 
             {/* Programs */}
             <div className="relative">
-
               <button
                 onClick={() => setCourseOpen(!courseOpen)}
                 className="flex items-center gap-1 font-medium text-gray-700 transition hover:text-[#A42F2B]"
@@ -118,7 +112,6 @@ const Navbar = () => {
                 />
               </button>
 
-
               <AnimatePresence>
                 {courseOpen && (
                   <motion.div
@@ -128,7 +121,7 @@ const Navbar = () => {
                     transition={{ duration: 0.25 }}
                     className="absolute left-0 top-10 w-52 rounded-xl bg-white p-3 shadow-xl"
                   >
-                    {["MCA", "BCA", "MBA"].map(course => (
+                    {["MCA", "BCA", "MBA"].map((course) => (
                       <a
                         key={course}
                         href={`#${course.toLowerCase()}`}
@@ -140,27 +133,18 @@ const Navbar = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-
             </div>
 
-
-            {[
-              "Admissions",
-              "Faculty",
-              "Placements",
-              "Campus",
-              "Contact",
-            ].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+            {menuItems.slice(2).map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
                 className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]"
               >
-                {item}
+                {item.name}
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
-
 
             <motion.button
               // whileHover={{ scale: 1.05 }}
@@ -171,14 +155,9 @@ const Navbar = () => {
 
               <span className="relative z-10 flex items-center gap-2">
                 Apply Now
-                {/* <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span> */}
               </span>
             </motion.button>
-
           </div>
-
 
           {/* Mobile Button */}
           <button
@@ -192,10 +171,8 @@ const Navbar = () => {
               <Bars3Icon className="h-8 w-8 text-[#12396d]" />
             )}
           </button>
-
         </div>
       </div>
-
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -219,20 +196,17 @@ const Navbar = () => {
               lg:hidden
             "
           >
-
             <div className="space-y-3">
-
-              {menuItems.slice(0, 2).map(item => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+              {menuItems.slice(0, 2).map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
                   onClick={closeMobileMenu}
                   className="block rounded-lg px-4 py-3 font-medium text-gray-700 hover:bg-blue-50"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </Link>
               ))}
-
 
               {/* Mobile Programs Dropdown */}
               <div>
@@ -248,7 +222,6 @@ const Navbar = () => {
                   />
                 </button>
 
-
                 <AnimatePresence>
                   {mobileCourseOpen && (
                     <motion.div
@@ -257,7 +230,7 @@ const Navbar = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden pl-5"
                     >
-                      {["MCA", "BCA", "MBA"].map(course => (
+                      {["MCA", "BCA", "MBA"].map((course) => (
                         <a
                           key={course}
                           href={`#${course.toLowerCase()}`}
@@ -270,32 +243,26 @@ const Navbar = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-
               </div>
 
-
-              {menuItems.slice(2).map(item => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+              {menuItems.slice(2).map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
                   onClick={closeMobileMenu}
                   className="block rounded-lg px-4 py-3 font-medium text-gray-700 hover:bg-blue-50"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </Link>
               ))}
-
 
               <button className="mt-4 w-full rounded-full bg-[#A42F2B] py-3 font-semibold text-white">
                 Apply Now
               </button>
-
             </div>
-
           </motion.div>
         )}
       </AnimatePresence>
-
     </motion.nav>
   );
 };
