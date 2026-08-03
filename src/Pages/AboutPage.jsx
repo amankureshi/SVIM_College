@@ -18,7 +18,6 @@ const AboutPage = () => {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         {/* Left */}
-
                         <motion.div
                             initial={{ opacity: 0, x: -80 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +60,7 @@ const AboutPage = () => {
                         >
                             <div className="rounded-[40px] overflow-hidden shadow-2xl">
                                 <img
-                                    src="http://nicsm.ac.in/assets/img/about_institute.jpeg"
+                                    src="https://i.postimg.cc/sx7Gr4kB/about-institute.jpg"
                                     alt="College"
                                     className="w-full h-[520px] object-cover"
                                 />
