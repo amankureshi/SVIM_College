@@ -5,6 +5,7 @@ import CoursesSection from "../Components/Home/CoursesSection";
 import FacultySection from "../Components/Home/FacultySection";
 import GallerySection from "../Components/Home/GallerySection";
 import ContactSection from "../Components/Home/ContactSection";
+import CourseHero from "../Components/Home/CourseHero";
 import GoogleMap from "../Components/Home/GoogleMap";
 import CTASection from "../Components/Home/CTASection";
 import Footer from "../Components/Common/Footer";
@@ -16,6 +17,7 @@ const Home = () => {
             <HeroSection />
             <AboutSection />
             <CoursesSection />
+            <CourseHero />
             <FacultySection />
             <GallerySection />
             <ContactSection />
