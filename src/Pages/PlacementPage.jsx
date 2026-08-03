@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../Components/Common/Navbar";
 import Footer from "../Components/Common/Footer";
+import Container from "./Container";
 import { FaBriefcase } from "react-icons/fa";
 import { GrLineChart } from "react-icons/gr";
 import { GiBullseye, GiTrophyCup } from "react-icons/gi";
@@ -68,7 +69,7 @@ const PlacementPage = () => {
 
             <Navbar />
             <section className="bg-[#142d5c] py-16 md:py-20">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl">
 
                         <p className="text-[#d6b36a] uppercase tracking-widest text-sm md:text-base font-semibold mb-4 pt-10">
@@ -94,7 +95,7 @@ const PlacementPage = () => {
 
                 {/* Statistics */}
                 <section className="py-16">
-                    <div className="mx-auto grid max-w-7xl gap-6 px-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid  gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
                         {stats.map(([title, value, icon], index) => (
                             <motion.div
@@ -128,7 +129,7 @@ const PlacementPage = () => {
 
                 {/* Training Placement Cell */}
                 <section className="py-16">
-                    <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid items-center gap-12  lg:grid-cols-2">
 
                         <motion.img
                             {...animation}
@@ -176,7 +177,7 @@ const PlacementPage = () => {
                     </motion.h2>
 
 
-                    <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-6 sm:grid-cols-3 lg:grid-cols-6">
+                    <Container className="mx-auto mt-12 grid max-w-6xl gap-6 px-6 sm:grid-cols-3 lg:grid-cols-6">
 
                         {recruiters.map((company, index) => (
                             <motion.div
@@ -204,13 +205,13 @@ const PlacementPage = () => {
                             </motion.div>
                         ))}
 
-                    </div>
+                    </Container>
 
                 </section>
 
 
                 {/* Process */}
-                <section className="py-16">
+                <Container className="">
 
                     <motion.h2
                         {...animation}
@@ -220,7 +221,7 @@ const PlacementPage = () => {
                     </motion.h2>
 
 
-                    <div className="mx-auto mt-12 grid max-w-5xl gap-5 px-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
                         {process.map((step, index) => (
                             <motion.div
@@ -245,7 +246,7 @@ const PlacementPage = () => {
 
                     </div>
 
-                </section>
+                </Container>
 
 
                 {/* Student Success */}
@@ -259,7 +260,7 @@ const PlacementPage = () => {
                     </motion.h2>
 
 
-                    <div className="mx-auto mt-12 grid max-w-6xl gap-8 px-6 md:grid-cols-3">
+                    <Container className="mx-auto mt-12 grid max-w-6xl gap-8 px-6 md:grid-cols-3">
 
                         {students.map((student, index) => (
                             <motion.div
@@ -304,31 +305,25 @@ const PlacementPage = () => {
                             </motion.div>
                         ))}
 
-                    </div>
+                    </Container>
 
                 </section>
 
-
                 {/* CTA */}
                 <section className="bg-blue-950 py-16 text-center">
-
                     <motion.div {...animation}>
-
                         <h2 className="text-4xl font-bold text-white">
                             Start Your Career Journey With MCA
                         </h2>
-
 
                         <p className="mx-auto mt-5 max-w-2xl text-gray-200">
                             Build your future with quality education, industry exposure,
                             and excellent placement support.
                         </p>
 
-
                         <button className="mt-8 rounded-full bg-red-900 px-8 py-3 font-semibold text-white transition hover:bg-red-800">
                             Contact Admission Team
                         </button>
-
                     </motion.div>
 
                 </section>
