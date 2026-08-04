@@ -59,7 +59,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="mt-6 text-center text-4xl font-extrabold leading-tight text-[#12396d] sm:text-5xl md:text-6xl lg:mt-8 lg:text-left lg:text-7xl"
+                className="heading-font mt-6 text-center text-4xl font-extrabold leading-tight text-[#12396d] sm:text-5xl md:text-6xl lg:mt-8 lg:text-left lg:text-7xl"
               >
                 Build Your
                 <br />
@@ -74,7 +74,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mx-auto mt-6 max-w-xl text-center text-base leading-7 text-gray-600 sm:text-lg sm:leading-8 lg:mx-0 lg:text-left"
+                className="body-font mx-auto mt-6 max-w-xl text-center text-base leading-7 text-gray-600 sm:text-lg sm:leading-8 lg:mx-0 lg:text-left"
               >
                 Unlock your potential with industry-focused education,
                 experienced faculty, modern infrastructure and outstanding
@@ -102,7 +102,7 @@ const HeroSection = () => {
                     <span className="absolute -left-20 top-0 h-full w-16 rotate-12 bg-white/30 transition-all duration-700 group-hover:left-[120%]" />
 
                     {/* Text */}
-                    <span className="relative z-10">Apply Now</span>
+                    <span className="relative z-10 body-font">Apply Now</span>
 
                     {/* Arrow Circle */}
                     <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#A42F2B] transition-all duration-500 group-hover:bg-[#12396d] group-hover:text-white">
@@ -118,7 +118,7 @@ const HeroSection = () => {
                   </span>
                 </button>
 
-                <button className="flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto">
+                <button className="flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto body-font">
                   <FaPlay />
                   Explore Courses
                 </button>
@@ -139,9 +139,9 @@ const HeroSection = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-[#12396d]">5000+</h3>
+                    <h3 className="text-2xl font-bold text-[#12396d] ">5000+</h3>
 
-                    <p className="text-gray-500">Students</p>
+                    <p className="text-gray-500 body-font">Students</p>
                   </div>
                 </div>
 
@@ -153,7 +153,7 @@ const HeroSection = () => {
                   <div>
                     <h3 className="text-2xl font-bold text-[#12396d]">95%</h3>
 
-                    <p className="text-gray-500">Placement</p>
+                    <p className="text-gray-500 body-font">Placement</p>
                   </div>
                 </div>
               </motion.div>
@@ -262,9 +262,9 @@ const HeroSection = () => {
                 // className="absolute left-10 bottom-5 bg-[#12396d] text-white px-6 py-4 rounded-2xl shadow-xl z-30"
                 className="absolute bottom-0 left-4 z-30 rounded-xl bg-[#12396d] px-4 py-3 text-white shadow-xl sm:left-10 sm:rounded-2xl sm:px-6"
               >
-                <p className="text-lg font-bold">NAAC</p>
+                <p className="text-lg font-bold body-font">NAAC</p>
 
-                <span className="text-sm text-white/80">Accredited</span>
+                <span className="text-sm text-white/80 body-font">Accredited</span>
               </motion.div>
 
               {/* Admission Badge */}
@@ -278,7 +278,7 @@ const HeroSection = () => {
                   repeat: Infinity,
                 }}
                 // className="absolute -right-6 top-36 bg-[#A42F2B] text-white px-6 py-3 rounded-full shadow-xl z-30"
-                className="absolute right-0 top-24 z-30 rounded-full bg-[#A42F2B] px-4 py-2 text-xs text-white shadow-xl sm:-right-4 sm:top-36 sm:px-6 sm:py-3 sm:text-base lg:-right-6"
+                className="absolute right-0 top-24 z-30 rounded-full bg-[#A42F2B] px-4 py-2 text-xs text-white shadow-xl sm:-right-4 sm:top-36 sm:px-6 sm:py-3 sm:text-base lg:-right-6 body-font"
               >
                 Admission Open
               </motion.div>
