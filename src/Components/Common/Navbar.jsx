@@ -76,10 +76,10 @@ const Navbar = () => {
 
             <div className="min-w-0">
               <h1 className="truncate text-xl font-bold text-[#12396d]">
-                SVIM College
+                SVIM MCA
               </h1>
 
-              <p className="truncate text-xs text-gray-500">
+              <p className="truncate text-xs text-gray-500 heading-font">
                 Excellence in Education
               </p>
             </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]"
+                className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B] heading-font"
               >
                 {item.name}
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full" />
@@ -102,12 +102,12 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setCourseOpen(!courseOpen)}
-                className="flex items-center gap-1 font-medium text-gray-700 transition hover:text-[#A42F2B]"
+                className="flex items-center gap-1 font-medium text-gray-700 transition hover:text-[#A42F2B] heading-font"
               >
                 Programs
 
                 <ChevronDownIcon
-                  className={`h-4 w-4 transition ${courseOpen ? "rotate-180" : ""
+                  className={`h-4 w-4 transition  ${courseOpen ? "rotate-180" : ""
                     }`}
                 />
               </button>
@@ -119,13 +119,13 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
                     transition={{ duration: 0.25 }}
-                    className="absolute left-0 top-10 w-52 rounded-xl bg-white p-3 shadow-xl"
+                    className="absolute left-0 top-10 w-52 rounded-xl bg-white p-3 shadow-xl heading-font"
                   >
                     {["MCA", "BCA", "MBA"].map((course) => (
                       <a
                         key={course}
                         href={`#${course.toLowerCase()}`}
-                        className="block rounded-lg px-4 py-3 text-gray-700 transition hover:bg-blue-50 hover:text-[#12396d]"
+                        className="block rounded-lg px-4 py-3 text-gray-700 transition hover:bg-blue-50 hover:text-[#12396d] heading-font"
                       >
                         {course}
                       </a>
@@ -139,7 +139,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B]"
+                className="group relative font-medium text-gray-700 transition hover:text-[#A42F2B] heading-font"
               >
                 {item.name}
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#A42F2B] transition-all duration-300 group-hover:w-full" />
@@ -153,7 +153,7 @@ const Navbar = () => {
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 flex items-center gap-2 heading-font">
                 Apply Now
               </span>
             </motion.button>
