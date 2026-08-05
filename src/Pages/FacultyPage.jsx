@@ -118,7 +118,7 @@ const FacultyPage = () => {
                                 viewport={{ once: true }}
                             >
                                 <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-
+                                    Director of MCA Department
                                 </span>
 
                                 <h2 className="mt-5 text-4xl font-bold text-slate-800">
