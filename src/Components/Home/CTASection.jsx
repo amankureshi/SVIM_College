@@ -30,17 +30,17 @@ const CTASection = () => {
           {/* Left */}
 
           <div>
-            <span className="font-semibold uppercase tracking-[5px] text-[#FFD166]">
+            <span className="font-semibold uppercase tracking-[5px] text-[#FFD166] body-font">
               Join SVIM College
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold leading-tight text-white md:text-6xl">
+            <h2 className="mt-5 text-4xl font-bold leading-tight text-white md:text-6xl heading-font">
               Shape Your Future
               <br />
               <span className="text-[#FFD166]">With Quality Education</span>
             </h2>
 
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/80">
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/80 body-font">
               Join SVIM College and gain practical knowledge with experienced
               faculty, modern infrastructure, industry-oriented curriculum,
               internships, and excellent placement opportunities.
@@ -74,11 +74,11 @@ const CTASection = () => {
             className="flex justify-center lg:justify-end"
           >
             <div className="w-full max-w-md rounded-[35px] bg-white p-10 shadow-2xl">
-              <h3 className="text-3xl font-bold text-[#12396d]">
+              <h3 className="text-3xl font-bold text-[#12396d] heading-font">
                 Admission Open
               </h3>
 
-              <p className="mt-4 leading-7 text-gray-500">
+              <p className="mt-4 leading-7 text-gray-500 body-font">
                 Begin your academic journey today and become part of one of the
                 best colleges for higher education.
               </p>
@@ -86,12 +86,12 @@ const CTASection = () => {
               <motion.button
                 whileHover={{ scale: 1.06, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-8 w-full rounded-full bg-[#A42F2B] py-4 text-lg font-semibold text-white shadow-xl duration-300 hover:bg-[#8d2724]"
+                className="mt-8 w-full rounded-full bg-[#A42F2B] py-4 text-lg font-medium text-white shadow-xl duration-300 hover:bg-[#8d2724] heading-font"
               >
                 Apply For Admission →
               </motion.button>
 
-              <button className="mt-4 w-full rounded-full border-2 border-[#12396d] py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white">
+              <button className="mt-4 w-full rounded-full border-2 border-[#12396d] py-4 font-medium text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white heading-font">
                 Download Brochure
               </button>
             </div>
