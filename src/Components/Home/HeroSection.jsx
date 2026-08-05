@@ -95,13 +95,16 @@ const HeroSection = () => {
                 {/* Apply Button */}
                 <button
                   onTouchStart={() => setApplyHover(true)}
-                  onTouchEnd={() => setApplyHover(false)}
+                  onTouchEnd={() =>
+                    setTimeout(() => setApplyHover(false), 500)
+                  }
+                  onMouseLeave={() => setApplyHover(false)}
                   className={`group relative flex w-full items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl transition-all duration-500 hover:scale-105 active:scale-95 sm:w-auto ${applyHover ? "scale-105" : ""
                     }`}
                 >
                   {/* Animated Border */}
                   <span
-                    className={`absolute inset-0 rounded-full bg-gradient-to-r from-[#A42F2B] via-orange-400 to-[#12396d] opacity-100 blur-sm transition-all duration-500 ${applyHover ? "blur-md" : ""
+                    className={`absolute inset-0 rounded-full bg-gradient-to-r from-[#A42F2B] via-orange-400 to-[#12396d] blur-sm transition-all duration-500 ${applyHover ? "blur-md" : ""
                       } group-hover:blur-md`}
                   />
 
@@ -119,7 +122,7 @@ const HeroSection = () => {
                       Apply Now
                     </span>
 
-                    {/* Arrow Circle */}
+                    {/* Arrow */}
                     <span
                       className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#A42F2B] transition-all duration-500 ${applyHover ? "bg-[#12396d] text-white" : ""
                         } group-hover:bg-[#12396d] group-hover:text-white`}
@@ -142,15 +145,17 @@ const HeroSection = () => {
                 {/* Explore Button */}
                 <button
                   onTouchStart={() => setExploreHover(true)}
-                  onTouchEnd={() => setExploreHover(false)}
-                  className={`flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto body-font ${exploreHover ? "bg-[#12396d] text-white" : ""
+                  onTouchEnd={() =>
+                    setTimeout(() => setExploreHover(false), 500)
+                  }
+                  onMouseLeave={() => setExploreHover(false)}
+                  className={`flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] transition-all duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto body-font ${exploreHover ? "bg-[#12396d] text-white" : ""
                     }`}
                 >
                   <FaPlay />
                   Explore Courses
                 </button>
               </motion.div>
-
               {/* Stats */}
 
               <motion.div
