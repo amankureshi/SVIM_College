@@ -3,11 +3,11 @@ const GoogleMap = () => {
     <section className="py-20 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <p className="text-[#A42F2B] font-semibold uppercase tracking-widest">
+          <p className="text-[#A42F2B] font-semibold uppercase tracking-widest heading-font">
             Find Us
           </p>
 
-          <h2 className="text-4xl font-bold text-[#12396d] mt-2">
+          <h2 className="text-4xl font-bold text-[#12396d] mt-2 heading-font">
             Visit Our Campus
           </h2>
         </div>
