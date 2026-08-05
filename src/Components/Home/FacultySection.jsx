@@ -94,15 +94,16 @@ const FacultySection = () => {
               <SwiperSlide key={faculty.id} className="!overflow-visible">
 
                 <motion.div
-                  whileHover={{
-                    y: -10,
-                  }}
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{
-                    duration: 0.25,
+                    duration: 0.6,
                     ease: "easeOut",
                   }}
-                  className="relative rounded-3xl bg-white shadow-lg transition-shadow hover:z-10 hover:shadow-2xl">
-
+                  whileHover={{ y: -10 }}
+                  className="relative rounded-3xl bg-white shadow-lg transition-shadow hover:z-10 hover:shadow-2xl"
+                >
                   <div className="relative overflow-hidden rounded-t-3xl bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 p-8 text-center">
                     <div className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white">
                       <FaGraduationCap />
