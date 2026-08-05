@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import useTouchHover from "../../Hooks/useTouchHover";
 import {
   FaArrowRight,
   FaPlay,
@@ -7,8 +7,11 @@ import {
   FaUsers,
   FaAward,
 } from "react-icons/fa";
+
 const HeroSection = () => {
-  const [isTouchActive, setIsTouchActive] = useState(false);
+  const { active, touchProps } = useTouchHover();
+  const applyButton = useTouchHover();
+  const exploreButton = useTouchHover();
   return (
     <section className="relative overflow-hidden bg-slate-50 pt-10 lg:pt-0">
       <div className="mx-auto max-w-7xl">
@@ -91,45 +94,39 @@ const HeroSection = () => {
                 transition={{ delay: 0.6 }}
                 className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
               >
+                {/* Apply Now Button */}
                 <button
-                  onTouchStart={() => setIsTouchActive(true)}
-                  onTouchEnd={() => setIsTouchActive(false)}
-                  onMouseLeave={() => setIsTouchActive(false)}
-                  className={`group relative flex w-full items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl transition-all duration-500 sm:w-auto ${isTouchActive ? "scale-105" : ""
+                  {...applyButton.touchProps}
+                  className={`group relative flex w-full items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl transition-all duration-500 hover:scale-105 active:scale-95 sm:w-auto ${applyButton.active ? "scale-105" : ""
                     }`}
                 >
                   {/* Animated Border */}
                   <span
-                    className={`absolute inset-0 rounded-full bg-gradient-to-r from-[#A42F2B] via-orange-400 to-[#12396d] opacity-100 blur-sm transition-all duration-500 ${isTouchActive ? "blur-md" : ""
+                    className={`absolute inset-0 rounded-full bg-gradient-to-r from-[#A42F2B] via-orange-400 to-[#12396d] opacity-100 blur-sm transition-all duration-500 ${applyButton.active ? "blur-md" : ""
                       } group-hover:blur-md`}
                   />
 
-                  {/* Button Body */}
                   <span className="relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-[#A42F2B] px-8 py-4 font-semibold text-white sm:w-auto">
 
                     {/* Shine Effect */}
                     <span
-                      className={`absolute -left-20 top-0 h-full w-16 rotate-12 bg-white/30 transition-all duration-700 ${isTouchActive ? "left-[120%]" : ""
+                      className={`absolute -left-20 top-0 h-full w-16 rotate-12 bg-white/30 transition-all duration-700 ${applyButton.active ? "left-[120%]" : ""
                         } group-hover:left-[120%]`}
                     />
 
-                    {/* Text */}
                     <span className="relative z-10 body-font">
                       Apply Now
                     </span>
 
-                    {/* Arrow Circle */}
                     <span
-                      className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#A42F2B] transition-all duration-500 ${isTouchActive
-                        ? "bg-[#12396d] text-white"
-                        : ""
+                      className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#A42F2B] transition-all duration-500 ${applyButton.active ? "bg-[#12396d] text-white" : ""
                         } group-hover:bg-[#12396d] group-hover:text-white`}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        className={`h-5 w-5 transition-transform duration-500 ${isTouchActive ? "translate-x-1" : ""
+                        className={`h-5 w-5 transition-transform duration-500 ${applyButton.active ? "translate-x-1" : ""
                           } group-hover:translate-x-1`}
                       >
                         <path d="M13.172 12L8.222 7.05L9.636 5.636L16 12L9.636 18.364L8.222 16.95L13.172 12Z" />
@@ -140,15 +137,17 @@ const HeroSection = () => {
                 </button>
 
 
+                {/* Explore Courses Button */}
                 <button
-                  onTouchStart={(e) => e.currentTarget.classList.add("touch-active")}
-                  onTouchEnd={(e) => e.currentTarget.classList.remove("touch-active")}
-                  className="flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto body-font touch-active:bg-[#12396d] touch-active:text-white"
+                  {...exploreButton.touchProps}
+                  className={`flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto body-font ${exploreButton.active
+                    ? "bg-[#12396d] text-white"
+                    : ""
+                    }`}
                 >
                   <FaPlay />
                   Explore Courses
                 </button>
-
               </motion.div>
 
               {/* Stats */}
