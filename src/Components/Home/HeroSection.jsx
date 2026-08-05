@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   FaArrowRight,
   FaPlay,
@@ -6,8 +7,9 @@ import {
   FaUsers,
   FaAward,
 } from "react-icons/fa";
-
 const HeroSection = () => {
+  const [applyHover, setApplyHover] = useState(false);
+  const [exploreHover, setExploreHover] = useState(false);
   return (
     <section className="relative overflow-hidden bg-slate-50 pt-10 lg:pt-0">
       <div className="mx-auto max-w-7xl">
@@ -90,35 +92,60 @@ const HeroSection = () => {
                 transition={{ delay: 0.6 }}
                 className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
               >
+                {/* Apply Button */}
                 <button
-                  className="group relative flex w-full items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl transition-all duration-500 hover:scale-105 active:scale-95 sm:w-auto"
+                  onTouchStart={() => setApplyHover(true)}
+                  onTouchEnd={() => setApplyHover(false)}
+                  className={`group relative flex w-full items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl transition-all duration-500 hover:scale-105 active:scale-95 sm:w-auto ${applyHover ? "scale-105" : ""
+                    }`}
                 >
                   {/* Animated Border */}
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#A42F2B] via-orange-400 to-[#12396d] opacity-100 blur-sm transition-all duration-500 group-hover:blur-md" />
+                  <span
+                    className={`absolute inset-0 rounded-full bg-gradient-to-r from-[#A42F2B] via-orange-400 to-[#12396d] opacity-100 blur-sm transition-all duration-500 ${applyHover ? "blur-md" : ""
+                      } group-hover:blur-md`}
+                  />
 
                   {/* Button Body */}
                   <span className="relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-[#A42F2B] px-8 py-4 font-semibold text-white sm:w-auto">
+
                     {/* Shine Effect */}
-                    <span className="absolute -left-20 top-0 h-full w-16 rotate-12 bg-white/30 transition-all duration-700 group-hover:left-[120%]" />
+                    <span
+                      className={`absolute -left-20 top-0 h-full w-16 rotate-12 bg-white/30 transition-all duration-700 ${applyHover ? "left-[120%]" : ""
+                        } group-hover:left-[120%]`}
+                    />
 
                     {/* Text */}
-                    <span className="relative z-10 body-font">Apply Now</span>
+                    <span className="relative z-10 body-font">
+                      Apply Now
+                    </span>
 
                     {/* Arrow Circle */}
-                    <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#A42F2B] transition-all duration-500 group-hover:bg-[#12396d] group-hover:text-white">
+                    <span
+                      className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#A42F2B] transition-all duration-500 ${applyHover ? "bg-[#12396d] text-white" : ""
+                        } group-hover:bg-[#12396d] group-hover:text-white`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        className="h-5 w-5 transition-transform duration-500 group-hover:translate-x-1"
+                        className={`h-5 w-5 transition-transform duration-500 ${applyHover ? "translate-x-1" : ""
+                          } group-hover:translate-x-1`}
                       >
                         <path d="M13.172 12L8.222 7.05L9.636 5.636L16 12L9.636 18.364L8.222 16.95L13.172 12Z" />
                       </svg>
                     </span>
+
                   </span>
                 </button>
 
-                <button className="flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto body-font">
+
+                {/* Explore Button */}
+                <button
+                  onTouchStart={() => setExploreHover(true)}
+                  onTouchEnd={() => setExploreHover(false)}
+                  className={`flex w-full items-center justify-center gap-3 rounded-full border-2 border-[#12396d] px-8 py-4 font-semibold text-[#12396d] duration-300 hover:bg-[#12396d] hover:text-white sm:w-auto body-font ${exploreHover ? "bg-[#12396d] text-white" : ""
+                    }`}
+                >
                   <FaPlay />
                   Explore Courses
                 </button>
