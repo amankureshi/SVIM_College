@@ -76,15 +76,15 @@ const GallerySection = () => {
         {/* Heading */}
 
         <div className="text-center mb-14">
-          <span className="text-[#B45309] uppercase tracking-[4px] font-semibold">
+          <span className="text-[#B45309] uppercase tracking-[4px] font-semibold heading-font">
             Event Gallery
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#163A70] mt-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#163A70] mt-3 heading-font">
             Campus Events & Memories
           </h2>
 
-          <p className="text-gray-500 mt-5 max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-5 max-w-2xl mx-auto body-font">
             Explore memorable moments from seminars, workshops, cultural
             festivals, technical events and student activities.
           </p>
@@ -116,22 +116,22 @@ const GallerySection = () => {
 
               {/* Category */}
 
-              <span className="absolute top-4 left-4 bg-[#163A70] text-white text-xs px-4 py-2 rounded-full">
+              <span className="absolute top-4 left-4 bg-[#163A70] text-white text-xs px-4 py-2 rounded-full heading-font">
                 {event.category}
               </span>
 
               {/* Overlay */}
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#163A70]/95 via-[#163A70]/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-6">
-                <h3 className="text-white text-2xl font-bold">{event.title}</h3>
+                <h3 className="text-white text-2xl font-bold heading-font">{event.title}</h3>
 
-                <div className="flex items-center gap-2 mt-3 text-white/90">
+                <div className="flex items-center gap-2 mt-3 text-white/90 heading-font">
                   <FaCalendarAlt />
 
                   <span>{event.date}</span>
                 </div>
 
-                <button className="mt-5 w-fit bg-white text-[#163A70] px-5 py-2 rounded-full font-semibold hover:bg-orange-800 hover:text-white duration-300">
+                <button className="mt-5 w-fit bg-white text-[#163A70] px-5 py-2 rounded-full font-medium hover:bg-[#A42F2B] hover:text-white duration-300 heading-font">
                   View Details
                 </button>
               </div>
