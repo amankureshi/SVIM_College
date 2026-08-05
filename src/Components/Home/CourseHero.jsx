@@ -51,7 +51,7 @@ const CourseHero = () => {
                 <img src={goldMedal} alt="Gold Medal" width={40} />
               </div>
 
-              <p className="mt-2 text-center text-sm text-gray-500 sm:text-base">
+              <p className="mt-2 text-center text-sm text-gray-500 sm:text-base body-font">
                 95% Students
                 <br />
                 Satisfaction
@@ -67,7 +67,7 @@ const CourseHero = () => {
             transition={{ duration: 0.7 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-3xl font-bold leading-tight text-[#102b57] sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-bold leading-tight text-[#102b57] sm:text-4xl lg:text-5xl heading-font">
               Improve your
               <br />
               Knowledge with
@@ -75,7 +75,7 @@ const CourseHero = () => {
               our Course
             </h1>
 
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-600 sm:mt-6 sm:text-lg lg:mx-0">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-600 sm:mt-6 sm:text-lg lg:mx-0 body-font">
               Provide most popular courses that help students build their career
               with practical knowledge and modern technology skills.
             </p>
@@ -101,11 +101,11 @@ const CourseHero = () => {
                   </div>
 
                   <div className="min-w-0">
-                    <h3 className="break-words text-lg font-semibold text-gray-800 sm:text-xl">
+                    <h3 className="break-words text-lg font-semibold text-gray-800 sm:text-xl heading-font">
                       {item.title}
                     </h3>
 
-                    <p className="mt-1 break-words text-sm text-gray-500 sm:text-base">
+                    <p className="mt-1 break-words text-sm text-gray-500 sm:text-base body-font">
                       {item.desc}
                     </p>
                   </div>
