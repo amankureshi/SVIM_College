@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaLaptopCode,
   FaDatabase,
@@ -49,12 +50,19 @@ const courses = [
 
 const CoursesSection = () => {
   const [activeCourse, setActiveCourse] = useState(null);
+
   return (
     <section className="py-20 bg-[#f8fafc]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
-        <div className="text-center mb-14">
+        {/* Heading Animation */}
+        <motion.div
+          className="text-center mb-14"
+          initial={{ y: -50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <span className="text-[#B45309] font-semibold uppercase tracking-widest body-font">
             Our Courses
           </span>
@@ -67,19 +75,44 @@ const CoursesSection = () => {
             Gain practical knowledge and industry-ready skills with our
             comprehensive MCA program designed for the modern IT world.
           </p>
-        </div>
+        </motion.div>
 
 
-        {/* Cards */}
+        {/* Cards Animation */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course) => (
-            <div
+          {courses.map((course, index) => (
+            <motion.div
               key={course.id}
               onTouchStart={() => setActiveCourse(course.id)}
               onTouchEnd={() =>
                 setTimeout(() => setActiveCourse(null), 500)
               }
               onMouseLeave={() => setActiveCourse(null)}
+
+              initial={{
+                opacity: 0,
+                y: 60,
+              }}
+
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+              }}
+
+              whileHover={{
+                y: -10,
+              }}
+
               className={`bg-white p-8 rounded-2xl shadow-md transition-all duration-300 group hover:shadow-xl ${activeCourse === course.id
                 ? "shadow-xl"
                 : ""
@@ -87,14 +120,21 @@ const CoursesSection = () => {
             >
 
               {/* Icon */}
-              <div
+              <motion.div
+                animate={
+                  activeCourse === course.id
+                    ? { rotate: 360 }
+                    : { rotate: 0 }
+                }
+                transition={{ duration: 0.5 }}
+
                 className={`w-16 h-16 rounded-full bg-orange-100 text-orange-900 flex items-center justify-center text-3xl transition-all duration-300 ${activeCourse === course.id
                   ? "bg-[#0d2b52] text-white"
                   : ""
                   } group-hover:bg-[#0d2b52] group-hover:text-white`}
               >
                 {course.icon}
-              </div>
+              </motion.div>
 
 
               {/* Title */}
@@ -119,7 +159,7 @@ const CoursesSection = () => {
                 Read More →
               </button>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 
