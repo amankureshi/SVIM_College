@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   FaLaptopCode,
   FaDatabase,
@@ -47,11 +48,12 @@ const courses = [
 ];
 
 const CoursesSection = () => {
+  const [activeCourse, setActiveCourse] = useState(null);
   return (
     <section className="py-20 bg-[#f8fafc]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
 
+        {/* Heading */}
         <div className="text-center mb-14">
           <span className="text-[#B45309] font-semibold uppercase tracking-widest body-font">
             Our Courses
@@ -67,30 +69,60 @@ const CoursesSection = () => {
           </p>
         </div>
 
-        {/* Cards */}
 
+        {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
             <div
               key={course.id}
-              className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300 group"
+              onTouchStart={() => setActiveCourse(course.id)}
+              onTouchEnd={() =>
+                setTimeout(() => setActiveCourse(null), 500)
+              }
+              onMouseLeave={() => setActiveCourse(null)}
+              className={`bg-white p-8 rounded-2xl shadow-md transition-all duration-300 group hover:shadow-xl ${activeCourse === course.id
+                ? "shadow-xl"
+                : ""
+                }`}
             >
-              <div className="w-16 h-16 rounded-full bg-orange-100 text-orange-900 flex items-center justify-center text-3xl group-hover:bg-[#0d2b52] group-hover:text-white duration-300">
+
+              {/* Icon */}
+              <div
+                className={`w-16 h-16 rounded-full bg-orange-100 text-orange-900 flex items-center justify-center text-3xl transition-all duration-300 ${activeCourse === course.id
+                  ? "bg-[#0d2b52] text-white"
+                  : ""
+                  } group-hover:bg-[#0d2b52] group-hover:text-white`}
+              >
                 {course.icon}
               </div>
 
+
+              {/* Title */}
               <h3 className="text-2xl font-semibold text-[#0d2b52] mt-6 heading-font">
                 {course.title}
               </h3>
 
-              <p className="text-gray-500 mt-4 leading-7 body-font">{course.desc}</p>
 
-              <button className="mt-6 text-[#0d2b52] font-semibold hover:underline heading-font">
+              {/* Description */}
+              <p className="text-gray-500 mt-4 leading-7 body-font">
+                {course.desc}
+              </p>
+
+
+              {/* Button */}
+              <button
+                className={`mt-6 font-semibold heading-font transition-all duration-300 ${activeCourse === course.id
+                  ? "text-[#B45309]"
+                  : "text-[#0d2b52]"
+                  } hover:text-[#B45309] hover:underline`}
+              >
                 Read More →
               </button>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
