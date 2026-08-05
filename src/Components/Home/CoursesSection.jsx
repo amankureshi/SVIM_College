@@ -53,15 +53,15 @@ const CoursesSection = () => {
         {/* Heading */}
 
         <div className="text-center mb-14">
-          <span className="text-[#B45309] font-semibold uppercase tracking-widest">
+          <span className="text-[#B45309] font-semibold uppercase tracking-widest body-font">
             Our Courses
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0d2b52] mt-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0d2b52] mt-3 heading-font">
             Master of Computer Applications (MCA)
           </h2>
 
-          <p className="text-gray-500 mt-5 max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-5 max-w-2xl mx-auto body-font">
             Gain practical knowledge and industry-ready skills with our
             comprehensive MCA program designed for the modern IT world.
           </p>
@@ -79,13 +79,13 @@ const CoursesSection = () => {
                 {course.icon}
               </div>
 
-              <h3 className="text-2xl font-semibold text-[#0d2b52] mt-6">
+              <h3 className="text-2xl font-semibold text-[#0d2b52] mt-6 heading-font">
                 {course.title}
               </h3>
 
-              <p className="text-gray-500 mt-4 leading-7">{course.desc}</p>
+              <p className="text-gray-500 mt-4 leading-7 body-font">{course.desc}</p>
 
-              <button className="mt-6 text-[#0d2b52] font-semibold hover:underline">
+              <button className="mt-6 text-[#0d2b52] font-semibold hover:underline heading-font">
                 Read More →
               </button>
             </div>
