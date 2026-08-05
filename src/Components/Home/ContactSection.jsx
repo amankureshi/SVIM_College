@@ -41,15 +41,15 @@ export default function ContactSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="text-[#A42F2B] font-semibold uppercase tracking-[4px]">
+          <p className="text-[#A42F2B] font-semibold uppercase tracking-[4px] heading-font">
             Contact Us
           </p>
 
-          <h2 className="text-5xl font-bold text-[#12396d] mt-3">
+          <h2 className="text-5xl font-bold text-[#12396d] mt-3 heading-font">
             Let's Start A Conversation
           </h2>
 
-          <p className="text-gray-500 mt-4">
+          <p className="text-gray-500 mt-4 body-font">
             We'd love to answer your questions and help you with admissions.
           </p>
         </motion.div>
@@ -74,11 +74,11 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-[#12396d] text-lg">
+                  <h3 className="font-semibold text-[#12396d] text-lg heading-font">
                     {item.title}
                   </h3>
 
-                  <p className="text-gray-500 mt-1">{item.value}</p>
+                  <p className="text-gray-500 mt-1 body-font">{item.value}</p>
                 </div>
               </div>
             ))}
@@ -93,7 +93,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-3 bg-white rounded-[35px] p-8 shadow-xl"
           >
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-5 heading-font">
               <input
                 type="text"
                 placeholder="Your Name"
@@ -125,22 +125,7 @@ export default function ContactSection() {
               className="border border-gray-300 rounded-xl p-4 w-full mt-5 resize-none outline-none focus:border-[#A42F2B]"
             ></textarea>
 
-            <button
-              className="
-              mt-6
-              bg-gradient-to-r
-              from-[#12396d]
-              to-[#A42F2B]
-              text-white
-              px-8
-              py-4
-              rounded-xl
-              font-semibold
-              hover:scale-105
-              duration-300
-              shadow-lg
-              "
-            >
+            <button className="mt-6 bg-gradient-to-r from-[#12396d] to-[#A42F2B] text-white px-8 py-4 rounded-xl font-medium hover:scale-105 duration-300 shadow-lg heading-font">
               Send Message →
             </button>
           </motion.div>
