@@ -50,15 +50,15 @@ const FacultySection = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div className="mb-12 text-center">
-          <span className="font-semibold uppercase tracking-[4px] text-[#A42F2B]">
+          <span className="font-semibold uppercase tracking-[4px] text-[#A42F2B] heading-font">
             Our Faculty
           </span>
 
-          <h2 className="mt-3 text-4xl font-bold text-[#12396d]">
+          <h2 className="mt-3 text-4xl font-bold text-[#12396d] heading-font">
             Meet Our Expert Faculty
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-gray-600 body-font">
             Experienced professors guiding students with practical knowledge and
             industry focused learning.
           </p>
@@ -116,13 +116,13 @@ const FacultySection = () => {
                   </div>
 
                   <div className="p-6 text-center">
-                    <h3 className="text-xl font-bold text-[#12396d]">
+                    <h3 className="text-xl font-bold text-[#12396d] heading-font">
                       {faculty.name}
                     </h3>
-                    <p className="mt-2 font-semibold text-[#A42F2B]">
+                    <p className="mt-2 font-semibold text-[#A42F2B] body-font">
                       {faculty.designation}
                     </p>
-                    <p className="mt-4 text-sm leading-6 text-gray-600">
+                    <p className="mt-4 text-sm leading-6 text-gray-600 body-font">
                       {faculty.expertise}
                     </p>
 
@@ -138,7 +138,7 @@ const FacultySection = () => {
                     </div>
 
 
-                    <button className="mt-6 rounded-full bg-[#12396d] px-6 py-3 font-semibold text-white transition hover:bg-[#A42F2B]">
+                    <button className="mt-6 rounded-full bg-[#12396d] px-6 py-3 font-medium text-white transition hover:bg-[#A42F2B] heading-font">
                       View Profile
                     </button>
 
